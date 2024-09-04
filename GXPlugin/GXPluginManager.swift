@@ -12,7 +12,7 @@ open class GXPluginManager: NSObject {
     
     private var plugins: [String: GXPluginProtocol] = [:]
 
-    private var pluginActions: [String: GXPluginAction] = [:]
+    var pluginActions: [String: GXPluginAction] = [:]
 
     public static let shared: GXPluginManager = GXPluginManager()
     
@@ -27,7 +27,7 @@ open class GXPluginManager: NSObject {
     public func plugin(key: String) -> GXPluginProtocol? {
         self.pluginLock.lock()
         let plugin = self.plugins[key]
-        self.pluginLock.lock()
+        self.pluginLock.unlock()
 
         return plugin
     }
@@ -41,7 +41,7 @@ open class GXPluginManager: NSObject {
     public func pluginAction(key: String) -> GXPluginAction? {
         self.pluginLock.lock()
         let pluginAction = self.pluginActions[key]
-        self.pluginLock.lock()
+        self.pluginLock.unlock()
 
         return pluginAction
     }
