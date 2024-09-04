@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        let serialQueue0 = DispatchQueue(label: "com.example.serialQueue")
+        let serialQueue0 = DispatchQueue(label: "com.example.serialQueue0")
         NSLog("DispatchQueue start")
         serialQueue0.async {
             GXPluginManager.register(pluginAction: { param in
