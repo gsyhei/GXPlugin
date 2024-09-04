@@ -12,7 +12,7 @@ open class GXPluginManager: NSObject {
     
     private var plugins: [String: GXPluginProtocol] = [:]
 
-    var pluginActions: [String: GXPluginAction] = [:]
+    private var pluginActions: [String: GXPluginAction] = [:]
 
     public static let shared: GXPluginManager = GXPluginManager()
     
