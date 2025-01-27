@@ -7,28 +7,6 @@
 
 import UIKit
 
-public class GXByteUtil: NSObject {
-    /// CRC16校验
-    /// - Parameter bytes: 字节数组
-    /// - Returns: CRC16校验码
-    public class func bytesToCrc16(bytes: [UInt8]) -> UInt16 {
-        let count = bytes.count
-        var crc: UInt16 = 0
-        for i in 0..<count {
-            crc = crc ^ UInt16(bytes[i] << 8)
-            for _ in 1..<8 {
-                if ((crc & 0x8000) != 0) {
-                    crc = crc << 1 ^ 0x1021
-                }
-                else {
-                    crc = crc << 1
-                }
-            }
-        }
-        return (crc & 0xFFFF)
-    }
-}
-
 // MARK: - 字节
 // MARK: swift里，Byte就是UInt8，一个字节，8位
 public extension UInt8 {
@@ -87,6 +65,19 @@ public extension UInt8 {
         // 将值合起来
         let result = otherVal | setVal
         return result
+    }
+    // 按bit位得到数字
+    func numberVal(range: NSRange) -> Int {
+        var binaryString: String = ""
+        let start = range.location, end = range.location + range.length
+        for i in start..<end {
+            let bit: UInt8 = self.readBit(index: i)
+            binaryString += "\(bit)"
+        }
+        guard let decimalNumber = Int(binaryString, radix: 2) else {
+            return 0
+        }
+        return decimalNumber
     }
 }
 
@@ -162,6 +153,21 @@ public extension Array where Element == UInt8 {
     var bString: String {
         return self.data.bString
     }
+    func crc16() -> UInt16 {
+        let count = self.count
+        var crc: UInt16 = 0
+        for i in 0..<count {
+            crc = crc ^ UInt16(self[i] << 8)
+            for _ in 1..<8 {
+                if ((crc & 0x8000) != 0) {
+                    crc = crc << 1 ^ 0x1021
+                } else {
+                    crc = crc << 1
+                }
+            }
+        }
+        return (crc & 0xFFFF)
+    }
 }
 
 // MARK: - 数字转化 -> Data\Bytes
@@ -183,6 +189,7 @@ public extension FixedWidthInteger {
     }
 }
 
+// MARK: - 范围扩展
 public extension NSRange {
     var nextLocation: Int {
         return self.location + self.length
