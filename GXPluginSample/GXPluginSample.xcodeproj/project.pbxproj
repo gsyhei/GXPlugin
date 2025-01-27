@@ -15,6 +15,7 @@
 		3309405F2C86FDB400F81A4F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 3309405E2C86FDB400F81A4F /* Base */; };
 		330940702C86FEF500F81A4F /* GXPluginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309406D2C86FEF500F81A4F /* GXPluginManager.swift */; };
 		330940712C86FEF500F81A4F /* GXPluginProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3309406E2C86FEF500F81A4F /* GXPluginProtocol.swift */; };
+		33CD77CE2D47658300FCCF6A /* GXByteUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CD77CD2D47658300FCCF6A /* GXByteUtil.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		330940602C86FDB400F81A4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3309406D2C86FEF500F81A4F /* GXPluginManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GXPluginManager.swift; sourceTree = "<group>"; };
 		3309406E2C86FEF500F81A4F /* GXPluginProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GXPluginProtocol.swift; sourceTree = "<group>"; };
+		33CD77CD2D47658300FCCF6A /* GXByteUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GXByteUtil.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 				330940522C86FDB200F81A4F /* AppDelegate.swift */,
 				330940542C86FDB200F81A4F /* SceneDelegate.swift */,
 				330940562C86FDB200F81A4F /* ViewController.swift */,
+				33CD77CD2D47658300FCCF6A /* GXByteUtil.swift */,
 				330940582C86FDB200F81A4F /* Main.storyboard */,
 				3309405B2C86FDB400F81A4F /* Assets.xcassets */,
 				3309405D2C86FDB400F81A4F /* LaunchScreen.storyboard */,
@@ -114,6 +117,7 @@
 				TargetAttributes = {
 					3309404E2C86FDB200F81A4F = {
 						CreatedOnToolsVersion = 15.4;
+						LastSwiftMigration = 1620;
 					};
 				};
 			};
@@ -157,6 +161,7 @@
 				330940712C86FEF500F81A4F /* GXPluginProtocol.swift in Sources */,
 				330940702C86FEF500F81A4F /* GXPluginManager.swift in Sources */,
 				330940532C86FDB200F81A4F /* AppDelegate.swift in Sources */,
+				33CD77CE2D47658300FCCF6A /* GXByteUtil.swift in Sources */,
 				330940552C86FDB200F81A4F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -307,6 +312,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L54KZN9KMH;
@@ -326,6 +332,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gin.GXPluginSample;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -336,6 +343,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = L54KZN9KMH;
