@@ -1,6 +1,6 @@
 //
-//  GXByteUtil.swift
-//  GXPluginSample
+//  Byte+GXAdd.swift
+//  Byte/UInt8字节操作扩展
 //
 //  Created by Gin on 2025/1/27.
 //
