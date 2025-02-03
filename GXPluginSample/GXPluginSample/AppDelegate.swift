@@ -91,20 +91,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // 进制转换
         let num: UInt8 = 111
-        let bit0 = num.readBit(index: 0)
-        let bit1 = num.readBit(index: 1)
-        let bit2 = num.readBit(index: 2)
-        let bit3 = num.readBit(index: 3)
-        let bit4 = num.readBit(index: 4)
-        let bit5 = num.readBit(index: 5)
-        let bit6 = num.readBit(index: 6)
-        let bit7 = num.readBit(index: 7)
+        let bit0 = num.gx_readBit(index: 0)
+        let bit1 = num.gx_readBit(index: 1)
+        let bit2 = num.gx_readBit(index: 2)
+        let bit3 = num.gx_readBit(index: 3)
+        let bit4 = num.gx_readBit(index: 4)
+        let bit5 = num.gx_readBit(index: 5)
+        let bit6 = num.gx_readBit(index: 6)
+        let bit7 = num.gx_readBit(index: 7)
 
-        let readNumber = num.numberVal(range: NSRange(location: 1, length: 4))
-        
-        
-        NSLog("num: \(num.bString), readNumber: \(readNumber)")
-
+        let readNumber = num.gx_numberVal(range: NSRange(location: 1, length: 4))
+        NSLog("num: \(num.gx_bString), readNumber: \(readNumber)")
         
         return true
     }
